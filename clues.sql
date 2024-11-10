@@ -21,6 +21,15 @@ LEFT JOIN countries on countrylanguages.countrycode = countries.code where count
 
 -- Write SQL query here
 
+SELECT name 
+FROM countries
+JOIN countrylanguages 
+ON countries.code = countrylanguages.countrycode 
+GROUP BY countries.name
+HAVING COUNT(DISTINCT countrylanguages.language) = 1 
+   AND MAX(countrylanguages.language) = 'Italian';
+
+
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
 
