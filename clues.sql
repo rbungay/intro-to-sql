@@ -82,3 +82,7 @@ and countries.capital = cities.id;
 
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+
+Select cities.name 
+From cities
+where cities.population = 91084;
